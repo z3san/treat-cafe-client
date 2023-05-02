@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import Chefs from '../Chefs/Chefs';
-import { Row } from 'react-bootstrap';
+
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -14,11 +14,15 @@ const Home = () => {
     return (
         <div>
            <Banner></Banner>
-          <Row xs={1} md={2} lg={3}>
+           <div className='my-container text-center'>
+            <h1 className='text-4xl font-bold'>Our Chefs</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos commodi, nostrum nulla nis</p>
+           </div>
+          <div className='grid sm:grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 my-container'>
           {
             data.map(singleCard=><Chefs singleCard={singleCard} key={singleCard.id} ></Chefs>)
            }
-          </Row>
+          </div>
         </div>
     );
 };

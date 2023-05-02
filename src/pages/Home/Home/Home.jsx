@@ -16,7 +16,7 @@ const Home = () => {
            <Banner></Banner>
            <div className='my-container text-center'>
             <h1 className='text-4xl font-bold'>Our Chefs</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos commodi, nostrum nulla nis</p>
+            
            </div>
           <div className='grid sm:grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 my-container'>
           {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaHamburger } from 'react-icons/fa';
 
 const Header = () => {
@@ -31,8 +31,8 @@ const Header = () => {
      <NavLink>Contact</NavLink>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl"> <FaHamburger className='text-yellow-400 mx-2 w-7'/> <span className='text-yellow-500'>Treat</span> 
-        <span className='text-green-700'>Cafe</span> </a>
+        <Link to='/' className="btn btn-ghost normal-case text-xl"> <FaHamburger className='text-yellow-400 mx-2 w-7'/> <span className='text-yellow-500'>Treat</span> 
+        <span className='text-green-700'>Cafe</span> </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal items-center px-1 gap-5">

@@ -5,6 +5,8 @@ import Chefs from "../pages/Home/Chefs/Chefs";
 import Blogs from "../pages/Blogs/Blogs";
 import AboutUs from "../pages/About Us/AboutUs";
 import Contact from "../pages/Contact/Contact";
+import ChefDetails from "../pages/ChefDetails/ChefDetails";
+import Details from "../Layout/Details";
 
 
 const router = createBrowserRouter([
@@ -38,6 +40,19 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: 'chefdetails',
+        element: <Details></Details>,
+        children: [
+            {
+                path: ':id',
+                element: <ChefDetails></ChefDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+
+            }
+        ]
+
+    }
     
 ])
 

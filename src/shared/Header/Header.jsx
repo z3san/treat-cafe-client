@@ -36,17 +36,17 @@ const Header = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal items-center px-1 gap-5">
-     <NavLink to='/'>Home</NavLink>
-     <NavLink to='/blogs' >Blogs</NavLink>
-     <NavLink to='/aboutus'>About Us</NavLink>
-     <NavLink to='/contact'>Contact</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/'>Home</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/blogs' >Blogs</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/aboutus'>About Us</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/contact'>Contact</NavLink>
    
         
     </ul>
       </div>
       <div className="navbar-end gap-3">
-      <button className="btn btn-outline  btn-success">Login</button>
-     <button className="btn btn-outline  btn-success">Logout</button>
+      <button className="btn btn-outline btn-sm btn-success">Login</button>
+     <button className="btn btn-outline btn-sm  btn-success">Logout</button>
     <img title='Zisan' className="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
       
 

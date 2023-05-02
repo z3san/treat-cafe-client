@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaThumbsUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const Chefs = ({singleCard}) => {
@@ -21,7 +22,7 @@ const Chefs = ({singleCard}) => {
           <div className="flex justify-center items-center gap-3">
             <FaThumbsUp></FaThumbsUp> {likes}
           </div>
-          <div className="badge badge-primary">View Recipe</div>
+          <Link to={`/chefdetails/${id}`} className="badge badge-primary">View Recipe</Link>
         </div>
   </div>
 </div>

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FaHamburger } from 'react-icons/fa';
+import { FaHamburger, FaUserAlt } from 'react-icons/fa';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
+
+const {user, handleLogout} =useContext(AuthContext)
+
     return (
   <div className="navbar bg-gray-200 my-container">
       <div className="navbar-start">
@@ -36,21 +40,35 @@ const Header = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal items-center px-1 gap-5">
-     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/'>Home</NavLink>
-     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/blogs' >Blogs</NavLink>
-     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/aboutus'>About Us</NavLink>
-     <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}  to='/contact'>Contact</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'text-yellow-500' : 'default')}  to='/'>Home</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'text-yellow-500' : 'default')}  to='/blogs' >Blogs</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'text-yellow-500' : 'default')}  to='/aboutus'>About Us</NavLink>
+     <NavLink className={({ isActive }) => (isActive ? 'text-yellow-500' : 'default')}  to='/contact'>Contact</NavLink>
    
         
     </ul>
       </div>
-      <div className="navbar-end gap-3">
-      <button className="btn btn-outline btn-sm btn-success">Login</button>
-     <button className="btn btn-outline btn-sm  btn-success">Logout</button>
-    <img title='Zisan' className="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
-      
-
-    </div>
+     <div className="navbar-end">
+        {user ? (
+          <img
+            title={user?.displayName}
+            src={`${user?.photoURL}`}
+            className="w-10 h-10 rounded-full"
+            alt=""
+          />
+        ) : (
+          <FaUserAlt></FaUserAlt>
+        )}
+        {user ? (
+          <button onClick={handleLogout} className="btn btn-sm btn-ghost">
+            Logout
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-sm btn-ghost">Login</button>
+          </Link>
+        )}
+      </div>
 </div>
 
     );

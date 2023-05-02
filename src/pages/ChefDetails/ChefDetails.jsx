@@ -1,15 +1,17 @@
 import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import Recipe from '../Recipe/Recipe';
 
 const ChefDetails = () => {
 const detailData = useLoaderData()
 
-const {picture, name, experience, total_recipes, likes, id, bio} = detailData;
-console.log(detailData);
+const {picture, name, experience, total_recipes, likes, id, bio,recipes} = detailData;
+
 
     return (
-        <div className="card my-container lg:card-side bg-base-100 shadow-xl">
+      <div className='my-container'>
+          <div className="card my-container lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img src={picture} alt="Album" />
         </figure>
@@ -29,6 +31,15 @@ console.log(detailData);
             </div>
           </div>
         </div>
+      </div>
+
+<div className='grid grid-cols-3 my-5' >
+    {
+        recipes.map((recipe , index)=><Recipe recipe={recipe} key={index} ></Recipe>)
+    }
+</div>
+
+
       </div>
     );
 };

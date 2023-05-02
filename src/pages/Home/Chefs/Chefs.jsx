@@ -20,7 +20,7 @@ const Chefs = ({singleCard}) => {
     <p>Total recipes:  {total_recipes}</p>
     <div className="card-actions justify-between">
           <div className="flex justify-center items-center gap-3">
-            <FaThumbsUp></FaThumbsUp> {likes}
+            <FaThumbsUp className='text-blue-500'></FaThumbsUp> {likes}
           </div>
           <Link to={`/chefdetails/${id}`} className="badge badge-primary">View Recipe</Link>
         </div>

@@ -10,7 +10,7 @@ const Chefs = ({singleCard}) => {
     return (
   <div>
   <div className="card  bg-base-100 shadow-xl">
-  <figure><img className='w-full h-56' src={picture} alt="Shoes" /></figure>
+  <figure><img className='w-full h-full' src={picture} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
       {name}

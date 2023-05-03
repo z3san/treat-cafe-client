@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
@@ -6,6 +6,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } =
   useContext(AuthContext);
+  const [error, setError] = useState("")
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -22,9 +23,10 @@ const Login = () => {
         console.log(loggedIn);
         navigate(from, { replace: true });
         form.reset();
+        setError("")
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
 
@@ -35,7 +37,8 @@ const Login = () => {
       console.log(loggedIn);
       navigate(from, { replace: true });
       form.reset();
-    }).catch(error=>console.log(error))
+      setError("")
+    }).catch(error=>setError(error.message))
   }
 
   const handleGithubSignIn = () =>{
@@ -44,7 +47,8 @@ const Login = () => {
         console.log(loggedIn);
         navigate(from, { replace: true });
         form.reset();
-    }).catch(error=>console.log(error))
+        setError("")
+    }).catch(error=>setError(error.message))
   }
 
 
@@ -82,6 +86,7 @@ const Login = () => {
                 <Link className="link" to="/register">
                   Register
                 </Link>
+                <p className="text-red-500">{error}</p>
               </div>
             </label>
           </div>
@@ -91,14 +96,16 @@ const Login = () => {
 
             <p className="text-center font-bold">OR</p>
 
-            <button onClick={handleGoogleSignIn} className="btn btn-outline">
+          </div>
+        </form>
+        <button onClick={handleGoogleSignIn} className="btn btn-outline my-2">
               <FaGoogle className="mx-2 text-blue-500" /> Login with Google{" "}
             </button>
             <button onClick={handleGithubSignIn} className="btn btn-outline">
               <FaGithub className="mx-2 text-gray-500" /> Login with Github
             </button>
-          </div>
-        </form>
+        <div>
+        </div>
       </div>
     </div>
   );

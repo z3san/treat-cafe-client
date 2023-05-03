@@ -64,7 +64,7 @@ logOut().then(()=>{}).catch(error=>{
             
           )}
           {user ? (
-            <button className='btn btn-outline' onClick={handleLogout} >Logout</button>
+            <button className='btn btn-outline btn-sm mx-2' onClick={handleLogout} >Logout</button>
           ) : (
             <Link to="/login">
               <button className='btn btn-outline btn-sm ' >Login</button>

@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 import Swal from 'sweetalert2'
 const Recipe = ({recipe}) => {
     const {recipe_name, ingredients, cooking_method, rating} = recipe
-
+    
     const [block, setBlock] = useState(true)
     const handleBookmark = () =>{
         if(block === true){

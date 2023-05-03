@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGithub } =
+  useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -25,6 +27,28 @@ const Login = () => {
         console.log(error.message);
       });
   };
+
+
+  const handleGoogleSignIn = () =>{
+    signInWithGoogle().then(result=>{
+      const loggedIn = result.user;
+      console.log(loggedIn);
+      navigate(from, { replace: true });
+      form.reset();
+    }).catch(error=>console.log(error))
+  }
+
+  const handleGithubSignIn = () =>{
+    signInWithGithub().then(result=>{
+      const loggedIn = result.user;
+        console.log(loggedIn);
+        navigate(from, { replace: true });
+        form.reset();
+    }).catch(error=>console.log(error))
+  }
+
+
+
   return (
     <div className="hero-content my-container flex-col">
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -54,15 +78,25 @@ const Login = () => {
             />
             <label className="label">
               <div className="label-text-alt">
-                Dont’t Have An Account ?{" "}
+                Dont’t Have An Account ?
                 <Link className="link" to="/register">
                   Register
                 </Link>
               </div>
             </label>
           </div>
-          <div className="form-control mt-6">
+
+          <div className="form-control mt-6 gap-2">
             <button className="btn btn-primary">Login</button>
+
+            <p className="text-center font-bold">OR</p>
+
+            <button onClick={handleGoogleSignIn} className="btn btn-outline">
+              <FaGoogle className="mx-2 text-blue-500" /> Login with Google{" "}
+            </button>
+            <button onClick={handleGithubSignIn} className="btn btn-outline">
+              <FaGithub className="mx-2 text-gray-500" /> Login with Github
+            </button>
           </div>
         </form>
       </div>

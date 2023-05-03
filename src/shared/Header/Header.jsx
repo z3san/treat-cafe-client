@@ -4,8 +4,12 @@ import { FaHamburger, FaUserAlt } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
-
-const {user, handleLogout} =useContext(AuthContext)
+const { user, logOut } = useContext(AuthContext);
+const handleLogout = () =>{
+logOut().then(()=>{}).catch(error=>{
+  console.log(error);
+})
+}
 
     return (
   <div className="navbar bg-gray-200 my-container">
@@ -49,25 +53,24 @@ const {user, handleLogout} =useContext(AuthContext)
     </ul>
       </div>
      <div className="navbar-end">
-        {user ? (
-          <img
-            title={user?.displayName}
-            src={`${user?.photoURL}`}
-            className="w-10 h-10 rounded-full"
-            alt=""
-          />
-        ) : (
-          <FaUserAlt></FaUserAlt>
-        )}
-        {user ? (
-          <button onClick={handleLogout} className="btn btn-sm btn-ghost">
-            Logout
-          </button>
-        ) : (
-          <Link to="/login">
-            <button className="btn btn-sm btn-ghost">Login</button>
-          </Link>
-        )}
+     {user && (
+              
+              <img
+    title={user?.displayName}
+    src={`${user?.photoURL}`}
+    className="w-10 h-10 rounded-full"
+    alt=""
+  />
+            
+          )}
+          {user ? (
+            <button className='btn btn-outline' onClick={handleLogout} >Logout</button>
+          ) : (
+            <Link to="/login">
+              <button className='btn btn-outline btn-sm ' >Login</button>
+            </Link>
+          )}
+
       </div>
 </div>
 
@@ -75,3 +78,5 @@ const {user, handleLogout} =useContext(AuthContext)
 };
 
 export default Header;
+
+

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import Chefs from '../Chefs/Chefs';
+import OurPartners from '../../Oursection/OurPartners';
+import Reviews from '../../Review/Review';
+import CustomerReviews from '../../Review/Review';
 
 
 const Home = () => {
@@ -24,6 +27,9 @@ const Home = () => {
             data.map(singleCard=><Chefs singleCard={singleCard} key={singleCard.id} ></Chefs>)
            }
           </div>
+          <Reviews></Reviews>
+          <OurPartners></OurPartners>
+
         </div>
     );
 };

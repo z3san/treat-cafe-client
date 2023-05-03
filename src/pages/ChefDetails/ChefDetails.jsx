@@ -3,6 +3,7 @@ import { FaThumbsUp } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
 
+
 const ChefDetails = () => {
 const detailData = useLoaderData()
 
@@ -37,6 +38,7 @@ const {picture, name, experience, total_recipes, likes, id, bio,recipes} = detai
     {
         recipes.map((recipe , index)=><Recipe recipe={recipe} key={index} ></Recipe>)
     }
+   
 </div>
 
 

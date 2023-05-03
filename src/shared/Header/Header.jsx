@@ -12,7 +12,7 @@ logOut().then(()=>{}).catch(error=>{
 }
 
     return (
-  <div className="navbar bg-gray-200 my-container">
+  <div className="navbar bg-gray-20 backdrop-blur bg-white/50 sticky top-0 z-30">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

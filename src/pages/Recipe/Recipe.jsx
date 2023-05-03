@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { FaBookmark, FaRegBookmark, FaRegStar, FaStar } from 'react-icons/fa';
+import { FaBookmark, FaRegBookmark, FaRegStar, FaStar,  } from 'react-icons/fa';
+import { BeakerIcon } from '@heroicons/react/24/solid'
+
+
 import Rating from 'react-rating';
 import Swal from 'sweetalert2'
 const Recipe = ({recipe}) => {
@@ -30,9 +33,9 @@ const Recipe = ({recipe}) => {
             )}
           </button>
         </div>
-        <p>{recipe_name}</p>
-        <p>{ingredients}</p>
-                <p>{cooking_method}</p>
+        <p className='font-bold'>{recipe_name}</p>
+        <p><span className='font-bold'>Ingredients:</span> {ingredients}</p>
+                <p><span className='font-bold'> <div>  </div> Cooking Method:</span> {cooking_method}</p>
                 <div className="flex items-center justify-start gap-1">
         <Rating
         readonly

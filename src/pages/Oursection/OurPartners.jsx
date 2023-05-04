@@ -37,15 +37,19 @@ const OurPartners = () => {
           
           </div>
           <div className="mx-4">
-            <img src="https://www.freepnglogos.com/uploads/starbucks-logo-png-transparent-0.png" alt="Burger King" className="h-16" />
+            <img src="https://www.freepnglogos.com/uploads/starbucks-logo-png-transparent-0.png" alt="Star bucks" className="h-16" />
           
           </div>
           <div className="mx-4">
-            <img src="https://www.freepnglogos.com/uploads/paypal-logo-png-3.png" alt="Burger King" className="h-16" />
+            <img src="https://www.freepnglogos.com/uploads/paypal-logo-png-3.png" alt="Paypal" className="h-16" />
             
           </div>
           <div className="mx-4">
-            <img src="http://www.pngimagesfree.com/LOGO/Z/Zomato/Zomato-Logo-PNG-HD-Transparent.png" alt="Burger King" className="h-16" />
+            <img src="https://www.logo.wine/a/logo/Wendy's/Wendy's-Logo.wine.svg" alt="wendys" className="h-16" />
+            
+          </div>
+          <div className="mx-4">
+            <img src="https://e7.pngegg.com/pngimages/651/153/png-clipart-kfc-logo-kfc-logo-icons-logos-emojis-iconic-brands-thumbnail.png" alt="wendys" className="h-16" />
             
           </div>
         </div>

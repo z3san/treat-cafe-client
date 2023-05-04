@@ -41,18 +41,17 @@ const options = {
         </div>
       </div>
     
-<button className="btn -btn-outline">
+
       <Pdf targetRef={ref} options={options} filename="blogs.pdf">
-        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+        {({ toPdf }) => <button className="btn btn-outline" onClick={toPdf}>Generate Pdf</button>}
       </Pdf>
-    </button>
+    
   </div>
       
       </div>
     );
 };
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Blogs />, rootElement);
+
 export default Blogs;
 
 

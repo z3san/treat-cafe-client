@@ -6,7 +6,7 @@ const AboutUs = () => {
      <FaHamburger className=' text-7xl text-yellow-400'></FaHamburger>
       <h1 className="text-4xl font-bold mb-4">Welcome to Treatcafe</h1>
       <p className="text-lg text-center mb-8">Treatcafe was founded in 2010 by a group of food enthusiasts who wanted to share their love for delicious, high-quality food with the community. Our founders were passionate about using fresh, locally sourced ingredients and preparing each dish with care to ensure the highest quality and taste. Since then, we have been committed to serving our customers with the best food, drinks, and desserts, and we take pride in the positive feedback we've received from our satisfied customers. Our dedication to quality has also earned us recognition in local food and drink publications, and we continue to strive for excellence in everything we do.</p>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-1 lg:grid-cols-2  gap-8">
         <div className="p-4 rounded-lg shadow-md bg-white">
           <h2 className="text-2xl font-bold mb-4">Our Story</h2>
           <p className="text-lg">Treatcafe was founded in 2010 by a group of food enthusiasts who wanted to share their love for delicious, high-quality food with the community. Since then, we have been committed to serving our customers with the best food, drinks, and desserts.

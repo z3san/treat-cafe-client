@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { FaBookmark, FaRegBookmark, FaRegStar, FaStar,  } from 'react-icons/fa';
+import { GiCampCookingPot } from "react-icons/gi";
 
-import { GiCampCookingPot, GiCook, GiBriefcase } from "react-icons/gi";
-import { FcBriefcase} from "react-icons/fc";
 
 import Rating from 'react-rating';
 import Swal from 'sweetalert2'
@@ -37,7 +36,7 @@ const Recipe = ({recipe}) => {
         <p className='font-bold'>{recipe_name}</p>
         <p><span className='font-bold'>Ingredients:</span> {ingredients}</p>
                
-               <span><GiCampCookingPot className='text-xl'/>{cooking_method}</span> 
+               <span><GiCampCookingPot className='text-xl'/> <span className='font-bold'>Cooking Method:</span> {cooking_method}</span> 
                
                 <div className="flex items-center justify-start gap-1">
         <Rating

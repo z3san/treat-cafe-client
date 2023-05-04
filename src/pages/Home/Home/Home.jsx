@@ -18,7 +18,7 @@ const Home = () => {
         <div>
            <Banner></Banner>
            <div className='my-container text-center my-10'>
-            <h1 className='text-4xl font-bold '>Our Chefs</h1>
+            <h1 className='text-4xl font-bold '>Our Chéfs</h1>
             <p className='my-5 text-bold text-xl italic'>  
  We have the finest chefs for American cuisine</p>
            </div>

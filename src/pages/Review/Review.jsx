@@ -44,9 +44,9 @@ const Review = () => {
         <h1 className=' my-16 text-center font-bold text-3xl'>Customer Feedback</h1>
         <div>
        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {reviews.map((review) => (
+      {reviews.map((review, index) => (
 
-<div className="card card-compact w-96 bg-base-100 shadow-xl">
+<div key={index} className="card card-compact w-96 bg-base-100 shadow-xl">
 <figure><img src={review.imageUrl} alt="Shoes" /></figure>
 <div className="card-body">
   <h2 className="card-title">{review.name}</h2>

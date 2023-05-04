@@ -34,9 +34,9 @@ logOut().then(()=>{}).catch(error=>{
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
        <NavLink to='/'>Home</NavLink>
-     <NavLink>Blogs</NavLink>
-     <NavLink>About Us</NavLink>
-     <NavLink>Contact</NavLink>
+     <NavLink to='/blogs'>Blogs</NavLink>
+     <NavLink to='/aboutus'>About Us</NavLink>
+     <NavLink to='/contact'>Contact</NavLink>
           </ul>
         </div>
         <Link to='/' className="btn btn-ghost normal-case text-xl"> <FaHamburger className='text-yellow-400 mx-2 w-7'/> <span className='text-yellow-500'>Treat</span> 

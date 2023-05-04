@@ -33,8 +33,9 @@ const {picture, name, experience, total_recipes, likes, id, bio,recipes} = detai
           </div>
         </div>
       </div>
+      <h1 className='text-3xl my-5 text-center' >Indulge in Culinary Delights: Discover the Mouthwatering Recipes of {name} </h1>
+<div className='grid lg:grid-cols-3 gap-5 my-5' >
 
-<div className='grid grid-cols-3 my-5' >
     {
         recipes.map((recipe , index)=><Recipe recipe={recipe} key={index} ></Recipe>)
     }

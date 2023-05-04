@@ -1,10 +1,24 @@
-import React from 'react';
+import React from "react";
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
 
+const ref = React.createRef();
 const Blogs = () => {
+
+const options = {
+  orientation: 'landscape',
+  unit: 'in',
+  format: [8.3,12.7]};
+
+
+
     return (
         <div className="my-container lg:h-screen">
-
-        <div className="my-8">
+        
+   
+  <div className="flex flex-col items-center justify-center">
+  <div ref={ref}>
+      <div className="my-8">
           <h1 className="text-3xl font-bold italic text-gray-600 text-center mb-10" >React & Node related blogs</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white p-4 shadow rounded">
@@ -26,9 +40,19 @@ const Blogs = () => {
           </div>
         </div>
       </div>
+    
+<button className="btn -btn-outline">
+      <Pdf targetRef={ref} options={options} filename="blogs.pdf">
+        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
+    </button>
+  </div>
+      
+      </div>
     );
 };
-
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Blogs />, rootElement);
 export default Blogs;
 
 

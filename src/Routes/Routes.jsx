@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             {
                 path: '/chefs',
                 element: <Chefs></Chefs>,
-                loader: ()=> fetch('http://localhost:5000/chefs')
+                loader: ()=> fetch('https://treat-cafe-server-z3san.vercel.app/chefs')
             },
             {
                 path: 'blogs',
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+                loader: ({params}) => fetch(`https://treat-cafe-server-z3san.vercel.app/chefs/${params.id}`)
 
             }
         ]
